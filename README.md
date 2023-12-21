@@ -1,4 +1,4 @@
-# Curso_JS_aprendendo_a_manipular_a_DOM
+# Curso JS aprendendo a manipular a DOM
 
 
 <h2>aula 2:</h2> 
