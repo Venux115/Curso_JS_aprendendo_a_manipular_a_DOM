@@ -2,8 +2,7 @@
 
 
 aula 2: 
-o que aprendi:''
-
-    * Utilizar o localStorage para armazenar e recuperar dados, permitindo persistência entre sessões;
+o que aprendi
+   * Utilizar o localStorage para armazenar e recuperar dados, permitindo persistência entre sessões;
     * Criar elementos utilizando o document.createElement;
     * Aninhar elementos utilizando o método append.
