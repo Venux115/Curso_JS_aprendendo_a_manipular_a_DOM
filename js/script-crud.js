@@ -3,6 +3,7 @@ const btnAdicionarTarefa = document.querySelector(".app__button--add-task")
 const formTarefas = document.querySelector(".app__form-add-task")
 const textarea = document.querySelector(".app__form-textarea")
 const ulTarefas= document.querySelector(".app__section-task-list")
+const btnCancelar = document.querySelector(".app__form-footer__button--cancel")
 
 const tarefaList = JSON.parse(localStorage.getItem('tarefas')) || [] //lista
 /*  JSON.parse transforma o JSON em um objeto javascript
@@ -11,6 +12,14 @@ const tarefaList = JSON.parse(localStorage.getItem('tarefas')) || [] //lista
 
 
 //funções
+
+function atualizarDados(){
+	localStorage.setItem('tarefas', JSON.stringify(tarefaList)) 
+	/*localStorga armazena arquivos no dominio por tempo indeterminado,
+	é limitado a 5MB e aceita somente string e JSON.
+	localstorage.setItem adiciona um item na localstorgea,
+	JSON.stringify transforma um objeto em uma strign*/
+}
 
 function criarHtmlTarefa(tarefa)
 {
@@ -36,12 +45,31 @@ function criarHtmlTarefa(tarefa)
 	imgBotao.setAttribute("src", "imagens/edit.png") //adicionando atributo src
 
 	botao.append(imgBotao) //inserindo elemento imgBotao dentro do elemento botao
+	
+	botao.addEventListener("click", () => {
+		const nova_descricao = prompt("Qual é o novo nome da tarefa?")
+		
+		if (nova_descricao) {
+			paragrafo.textContent = nova_descricao
+			tarefa.descricao = nova_descricao
+			atualizarDados()
+		}else{
+			alert("Descrição não pode ser nula!")
+		}
+		
+
+	})
 
 	li.append(svg)//inserindo elemento svg dentro do elemento li
 	li.append(paragrafo)//inserindo elemento paragrafo dentro do elemento li
 	li.append(botao)//inserindo botao svg dentro do elemento li
 
 	return li //retornando elemento li
+}
+
+function fecharForm(){
+	textarea.value = '' //limpa textarea
+	formTarefas.classList.add('hidden')//esconde o formulário
 }
 
 //click's
@@ -60,14 +88,14 @@ formTarefas.addEventListener("submit", (evento) => {
 
 	tarefaList.push(tarefaItem) //push adiciona um valor em uma lista
 	
-	localStorage.setItem('tarefas', JSON.stringify(tarefaList)) 
-	/*localStorga armazena arquivos no dominio por tempo indeterminado,
-	é limitado a 5MB e aceita somente string e JSON.
-	localstorage.setItem adiciona um item na localstorgea,
-	JSON.stringify transforma um objeto em uma strign*/
+	atualizarDados()
+	
+	fecharForm()
+})
 
-	textarea.value = '' //limpa textarea
-	formTarefas.classList.toggle('hidden')//esconde o formulário
+btnCancelar.addEventListener("click", () => {
+	debugger
+	fecharForm()
 })
 
 //processamentos
