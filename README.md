@@ -1,8 +1,11 @@
 # Curso_JS_aprendendo_a_manipular_a_DOM
 
 
-aula 2: 
-o que aprendi
-   * Utilizar o localStorage para armazenar e recuperar dados, permitindo persistência entre sessões;
-    * Criar elementos utilizando o document.createElement;
-    * Aninhar elementos utilizando o método append.
+<h2>aula 2:</h2> 
+<h3>o que aprendi:</h3>
+    <ul>
+      <li>Utilizar o localStorage para armazenar e recuperar dados, permitindo persistência entre sessões;</li>
+      <li>Criar elementos utilizando o document.createElement;</li>
+      <li> Aninhar elementos utilizando o método append.</li>
+    </ul>
+    
