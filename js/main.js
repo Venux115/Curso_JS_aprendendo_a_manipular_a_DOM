@@ -18,7 +18,7 @@ const audioFim = new Audio("sons/beep.mp3");
 const musica = new Audio("sons/luna-rise-part-one.mp3");
 musica.loop = true;
 
-let tempoDecorridoEmSegundos = 1500;
+let tempoDecorridoEmSegundos = 5; //1500
 let intervaloId = null;
 
 imgStartPause.setAttribute("src", "imagens/play_arrow.png");
@@ -32,7 +32,7 @@ musicaFocoInput.addEventListener("change", () => {
 });
 
 focusBt.addEventListener("click", () => {
-  tempoDecorridoEmSegundos = 1500;
+  tempoDecorridoEmSegundos = 5; //1500
   alterarContexto("foco");
   focusBt.classList.add("active");
 });
@@ -81,10 +81,17 @@ function alterarContexto(contexto) {
 
 const contagemRegressiva = () => {
   if (tempoDecorridoEmSegundos <= 0) {
-    audioFim.play();
+    
+    //audioFim.play();
     alert("tempo finalizado");
     imgStartPause.setAttribute("src", "imagens/play_arrow.png");
     spanStartPause.textContent = "Começar";
+    const focoAtivo = html.getAttribute("data-contexto") == "foco"
+    if (focoAtivo)
+    {
+      const evento = new CustomEvent('FocoFinalizado')
+      document.dispatchEvent(evento)
+    }
     zerar();
     return;
   }
