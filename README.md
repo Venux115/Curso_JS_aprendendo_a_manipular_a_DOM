@@ -26,3 +26,12 @@
       <li>Trabalhamos com a criação e resposta a eventos personalizados, como o evento FocoFinalizado, que é usado para marcar uma tarefa como concluída;</li>
       <li>Melhoramos a experiência do usuário ao fornecer feedback visual sobre a tarefa selecionada e a capacidade de marcar uma tarefa como concluída.</li>
     </ul>
+
+<h2>aula 5:</h2> 
+<h3>o que aprendi:</h3>
+  <ul>
+      <li>Entendemos como acessar e alterar elementos no DOM, uma habilidade fundamental para criar interações dinâmicas nas páginas web;</li>
+      <li>Exploramos como capturar e responder a eventos como cliques e submissões de formulário, permitindo que nossa aplicação reaja às ações dos usuários;</li>
+      <li>Aprendemos a manter e atualizar um estado local para nossa aplicação, usando a capacidade do localStorage para persistir tarefas e estados entre as sessões;</li>
+      <li>Dominamos a arte de criar elementos dinamicamente no JavaScript e inseri-los no DOM, proporcionando uma atualização em tempo real da interface do usuário.</li>
+    </ul>
